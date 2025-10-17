@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Dash Hinds" />
+  <title>Dash Hinds • Assignment 6</title>
+
+  <!-- Primary stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23004080' d='M50 6l32 22-12 40H30L18 28 50 6z'/%3E%3Ccircle cx='50' cy='50' r='12' fill='%23ffd966'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container">
+      <svg class="logo" width="48" height="48" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <!-- Dark background circle -->
+        <circle cx="50" cy="50" r="48" fill="#2c1810" />
+        <!-- Inner golden circle -->
+        <circle cx="50" cy="50" r="35" fill="url(#goldGradient)" />
+        <!-- Central diamond shape -->
+        <path d="M50 20l15 15-15 15-15-15z" fill="#000000" />
+        <!-- Small accent circles -->
+        <circle cx="35" cy="35" r="3" fill="#d4af37" opacity="0.8" />
+        <circle cx="65" cy="35" r="3" fill="#d4af37" opacity="0.8" />
+        <circle cx="35" cy="65" r="3" fill="#d4af37" opacity="0.8" />
+        <circle cx="65" cy="65" r="3" fill="#d4af37" opacity="0.8" />
+      </svg>
+      <h1 class="site-title">Dash's Web Shop</h1>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#hours">Hours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          Welcome to Dash's Web Shop! Here you can find a variety of products that I have made.
+        </p>
+        <figure class="profile">
+          <img src="assets/JPEGimage.jpeg" alt="A dope ass lion looking dope af" width="320" height="320" />
+          <figcaption>My shop focuses on making products that are useful and easy to use.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="services" class="section alt">
+      <div class="container">
+        <h2>Services</h2>
+        <ul class="services-list">
+          <li>
+            <h3>Copy &amp; Paste</h3>
+            <p>Easy writing work for your projects.</p>
+          </li>
+          <li>
+            <h3>System Design</h3>
+            <p>Ensuring your systems are efficient and easy to use.</p>
+          </li>
+          <li>
+            <h3>The whole shebang</h3>
+            <p>All of the above, plus more.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="hours" class="section">
+      <div class="container">
+        <h2>Hours &amp; Location</h2>
+        <dl class="hours">
+          <div><dt>Mon–Fri</dt><dd>10:00–18:00</dd></div>
+          <div><dt>Saturday</dt><dd>10:00–16:00</dd></div>
+          <div><dt>Sunday</dt><dd>Closed</dd></div>
+        </dl>
+        <address>
+          123 Dash Ave, Suite 6<br />
+          Dashland, DH 85852
+        </address>
+        <p class="note">All content is 100% trustable.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Email us at
+          <a href="mailto:student@example.com">student@example.com</a>
+          or call <a href="tel:+15205551234">(520) 555‑1234</a>.
+        </p>
+
+        <form class="contact-form" action="#" method="post" aria-describedby="contact-help">
+          <p id="contact-help" class="sr-only">All fields are optional bc this is a demo form.</p>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" />
+
+          <label for="msg">Message</label>
+          <textarea id="msg" name="message" rows="4"></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>&copy; Bruh</p>
+      <p>
+        <a href="#top">Back to top</a>
+        <span aria-hidden="true"> · </span>
+        <a href="https://validator.w3.org/" target="_blank" rel="noopener">Validate HTML</a>
+        <span aria-hidden="true"> · </span>
+        <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">Validate CSS</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

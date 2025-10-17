@@ -1,0 +1,228 @@
+/* === Diamond Vitality — Accessible Base Styles === */
+
+/* Color system */
+:root {
+  --brand: #004080;
+  --brand-ink: #ffffff;
+  --accent: #e6b800;
+  --text: #222222;
+  --bg: #fafafa;
+  --bg-alt: #ffffff;
+  --muted: #6b7280;
+  --ring: #1d4ed8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand: #1e3a8a;
+    --brand-ink: #e5e7eb;
+    --accent: #d4af37;
+    --text: #e5e7eb;
+    --bg: #0b0f14;
+    --bg-alt: #0f141b;
+    --muted: #9ca3af;
+    --ring: #60a5fa;
+  }
+}
+
+/* Reset-ish */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html:focus-within { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: var(--brand);
+  color: var(--brand-ink);
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  outline: 2px solid var(--ring);
+}
+
+/* Layout */
+.container {
+  width: min(100% - 2rem, 960px);
+  margin-inline: auto;
+}
+
+.section { padding: 2.5rem 0; }
+.section.alt { background: var(--bg-alt); }
+
+.site-header,
+.site-footer {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+.site-header .container,
+.site-footer .container {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+}
+.site-header .container {
+  grid-template-columns: auto 1fr;
+}
+.site-title {
+  margin: .25rem 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  letter-spacing: .02em;
+}
+
+/* Logo styling */
+
+/* Nav */
+.primary-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: .5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.primary-nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.primary-nav a:focus,
+.primary-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+h2 { margin-top: 0; font-size: clamp(1.25rem, 3vw, 1.5rem); }
+h3 { margin-bottom: .25rem; font-size: 1.1rem; }
+
+.profile {
+  margin: 1rem 0;
+}
+.profile img {
+  max-width: 100%;
+  height: auto;
+  border-radius: .75rem;
+  display: block;
+}
+.profile figcaption {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-top: .5rem;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+.services-list li {
+  list-style: none;
+  background: var(--bg);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: .75rem;
+  padding: 1rem;
+}
+
+/* Definition list for hours */
+.hours {
+  display: grid;
+  gap: .5rem 1rem;
+  grid-template-columns: minmax(8rem, 1fr) 2fr;
+}
+.hours dt { font-weight: 700; }
+.hours dd { margin: 0; }
+
+.note { color: var(--muted); font-size: .95rem; }
+
+/* Contact section links */
+#contact a {
+  color: var(--muted);
+  text-decoration: none;
+}
+#contact a:hover,
+#contact a:focus {
+  text-decoration: underline;
+}
+
+/* Forms */
+.contact-form {
+  display: grid;
+  gap: .75rem;
+  max-width: 520px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: .6rem .75rem;
+  border-radius: .5rem;
+  border: 1px solid rgba(0,0,0,.15);
+  background: #fff;
+  color: #111;
+}
+@media (prefers-color-scheme: dark) {
+  .contact-form input,
+  .contact-form textarea {
+    background: #0f141b;
+    color: var(--text);
+    border-color: rgba(255,255,255,.15);
+  }
+}
+.contact-form button {
+  justify-self: start;
+  padding: .6rem .9rem;
+  border: 0;
+  border-radius: .5rem;
+  background: var(--brand-ink);
+  color: var(--brand);
+  font-weight: 700;
+  cursor: pointer;
+}
+.contact-form button:focus,
+.contact-form button:hover {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Footer */
+.site-footer p {
+  margin: .4rem 0;
+  font-size: .95rem;
+}
+.site-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.site-footer a:hover,
+.site-footer a:focus { text-decoration: underline; }
+
+/* Utility */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
